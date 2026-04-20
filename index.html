@@ -3,43 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Abdullah Sayed - Frontend Developer. React, Tailwind, API Integration, and 3D Web Experiences.">
+  <meta name="description" content="Portfolio of Abdullah Sayed - Creative Frontend Engineer.">
   
-  <link rel="icon" type="image/png" href="image copy 2.png" />
-
+  <link rel="icon" type="image/png" href="new.png" />
   <script src="https://cdn.tailwindcss.com"></script>
-
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
   <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" rel="stylesheet">
 
-  <title>Abdullah  Sayed| Portfolio</title>
+  <title>Abdullah Sayed | Creative Developer</title>
   
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+            mono: ['Fira Code', 'monospace'],
+          },
           colors: {
-            slate: {
-              850: '#151f32',
-              900: '#0f172a',
-            },
-            teal: {
-              400: '#2dd4bf',
-              500: '#14b8a6',
-              600: '#0d9488',
-            }
-          },
-          animation: {
-            'blob': 'blob 7s infinite',
-            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-          },
-          keyframes: {
-            blob: {
-              '0%': { transform: 'translate(0px, 0px) scale(1)' },
-              '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-              '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-              '100%': { transform: 'translate(0px, 0px) scale(1)' },
+            brand: {
+              dark: '#0B0F19',
+              card: '#111827',
+              cyan: '#00F0FF',
+              purple: '#8A2BE2',
             }
           }
         }
@@ -48,390 +36,386 @@
   </script>
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800;900&display=swap');
+
     body {
-      background-color: #0f172a;
-      /* خلفية أكثر عمقاً وجاذبية */
+      background-color: #0B0F19;
+      color: #E5E7EB;
       background-image: 
-        radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
-        radial-gradient(at 50% 100%, hsla(225,39%,30%,1) 0, transparent 50%), 
-        radial-gradient(at 100% 0%, hsla(339,49%,30%,0) 0, transparent 50%);
-      font-family: 'Inter', sans-serif;
-      color: #cbd5e1;
+        radial-gradient(at 0% 0%, rgba(138, 43, 226, 0.08) 0px, transparent 40%),
+        radial-gradient(at 100% 100%, rgba(0, 240, 255, 0.08) 0px, transparent 40%);
+      background-attachment: fixed;
     }
 
-    /* كلاس الزجاج المحسن للمشاريع */
-    .glass-card {
-      background: rgba(30, 41, 59, 0.4); /* لون غامق شفاف */
-      backdrop-filter: blur(12px); /* تغبيش الخلفية */
-      border: 1px solid rgba(255, 255, 255, 0.05); /* حدود خفيفة جداً */
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* ظل ناعم */
-      transition: all 0.4s ease;
+    h1, h2, h3, .nav-logo {
+      font-family: 'Outfit', sans-serif;
     }
 
-    /* تأثير الهوفر على الكروت */
-    .glass-card:hover {
-      background: rgba(30, 41, 59, 0.6);
-      border-color: rgba(45, 212, 191, 0.3); /* لون التيل يظهر في الحدود */
-      transform: translateY(-8px); /* يرتفع للأعلى */
-      box-shadow: 0 20px 40px -10px rgba(45, 212, 191, 0.15); /* ظل مضيء */
+    .creative-card {
+      background: rgba(17, 24, 39, 0.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 24px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* Scroll Reveal */
+    .creative-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(0, 240, 255, 0.3);
+      box-shadow: 0 15px 35px -10px rgba(0, 240, 255, 0.1);
+    }
+
+    .text-glow {
+      background: linear-gradient(to right, #00F0FF, #8A2BE2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
     .reveal {
       opacity: 0;
-      transform: translateY(40px);
-      transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+      transform: translateY(40px) scale(0.98);
+      transition: all 0.9s cubic-bezier(0.5, 0, 0, 1);
     }
     .reveal.active {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) scale(1);
     }
-    
-    /* Mobile Menu Transition */
-    #mobile-menu {
-      transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+    .typing-cursor {
+      display: inline-block;
+      width: 4px;
+      background-color: #00F0FF;
+      margin-left: 4px;
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .bg-striped {
+      background-image: repeating-linear-gradient(
+        45deg,
+        rgba(255,255,255,0.02) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255,255,255,0.02) 50%,
+        rgba(255,255,255,0.02) 75%,
+        transparent 75%,
+        transparent
+      );
+      background-size: 20px 20px;
     }
   </style>
 </head>
-<body class="overflow-x-hidden antialiased relative">
+<body class="selection:bg-brand-cyan selection:text-brand-dark">
 
-  <div class="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
-    <div class="absolute top-0 left-1/4 w-96 h-96 bg-teal-500/10 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob"></div>
-    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-  </div>
+  <nav class="fixed top-0 left-0 w-full z-50 bg-brand-dark/70 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+      
+      <a href="#" class="nav-logo font-black text-xl sm:text-2xl tracking-wide text-white flex items-center gap-2 sm:gap-3 group">
+        <div class="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-xl border border-white/10 bg-white/5 group-hover:border-brand-cyan transition-colors">
+          <span class="font-bold text-base sm:text-lg text-white">A<span class="text-brand-cyan">S</span></span>
+        </div>
+        <span class="hidden sm:block"><span class="text-brand-cyan"></span></span>
+      </a>
+      
+      <ul class="hidden md:flex space-x-8 lg:space-x-10 text-sm font-semibold text-gray-400">
+        <li><a href="#about" class="hover:text-white relative group transition-colors">About <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-cyan transition-all duration-300 group-hover:w-full"></span></a></li>
+        <li><a href="#skills" class="hover:text-white relative group transition-colors">Stack <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-cyan transition-all duration-300 group-hover:w-full"></span></a></li>
+        <li><a href="#projects" class="hover:text-white relative group transition-colors">Projects <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-cyan transition-all duration-300 group-hover:w-full"></span></a></li>
+      </ul>
 
-  <nav class="fixed top-0 left-0 w-full z-50 border-b border-white/5 bg-slate-900/80 backdrop-blur-md transition-all duration-300">
-    <div class="max-w-6xl mx-auto px-6 py-4">
-      <div class="flex justify-between items-center">
-        <a href="#" class="flex items-center gap-3 group">
-          <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-transparent group-hover:border-teal-400 transition-all duration-300 shadow-lg shadow-teal-500/10">
-              <img src="image copy 2.png" alt="Logo" class="w-full h-full object-cover">
-          </div>
-          <span class="font-bold text-lg text-white tracking-wide group-hover:text-teal-400 transition">Abdullah.Dev</span>
-        </a>
+      <a href="mailto:abdullahsayed.devo@gmail.com" class="hidden md:flex items-center gap-2 px-5 py-2 sm:px-6 sm:py-2.5 rounded-lg bg-white/5 border border-white/10 text-white font-bold hover:bg-brand-cyan hover:text-brand-dark hover:border-brand-cyan transition-all duration-300">
+        Hire Me <i class="fa-solid fa-paper-plane text-sm"></i>
+      </a>
 
-        <ul class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
-          <li><a href="#about" class="hover:text-teal-400 transition-colors relative group">About <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-400 transition-all group-hover:w-full"></span></a></li>
-          <li><a href="#skills" class="hover:text-teal-400 transition-colors relative group">Tech Stack <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-400 transition-all group-hover:w-full"></span></a></li>
-          <li><a href="#projects" class="hover:text-teal-400 transition-colors relative group">Work <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-400 transition-all group-hover:w-full"></span></a></li>
-        </ul>
-
-        <button id="menu-btn" class="md:hidden text-white focus:outline-none">
-          <i class="fa-solid fa-bars text-2xl"></i>
-        </button>
-      </div>
-
-      <div id="mobile-menu" class="hidden md:hidden mt-4 bg-slate-800/50 rounded-xl border border-white/5 overflow-hidden">
-        <ul class="flex flex-col text-center py-4 space-y-4 text-slate-300 font-medium">
-          <li><a href="#about" class="block hover:text-teal-400 hover:bg-white/5 py-2">About</a></li>
-          <li><a href="#skills" class="block hover:text-teal-400 hover:bg-white/5 py-2">Tech Stack</a></li>
-          <li><a href="#projects" class="block hover:text-teal-400 hover:bg-white/5 py-2">Work</a></li>
-        </ul>
-      </div>
+      <button id="menu-btn" class="md:hidden text-white text-2xl focus:outline-none hover:text-brand-cyan transition-colors z-50">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </button>
     </div>
   </nav>
 
-  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20 relative">
-    <div class="reveal">
-        <div class="relative mb-8 inline-block group">
-            <div class="absolute inset-0 bg-teal-500 blur-[50px] opacity-20 group-hover:opacity-40 transition duration-700 rounded-full animate-pulse-slow"></div>
-            <div class="relative w-40 h-40 md:w-52 md:h-52 rounded-full p-1 bg-gradient-to-tr from-teal-500 to-slate-800">
-              <img src="image copy 2.png" alt="Abdullah" class="w-full h-full rounded-full object-cover border-4 border-slate-900 shadow-2xl">
+  <div id="mobile-menu" class="fixed inset-0 bg-brand-dark/95 backdrop-blur-xl z-40 hidden flex-col items-center justify-center space-y-8">
+    <button id="close-menu" class="absolute top-6 right-6 text-white text-3xl focus:outline-none hover:text-brand-cyan transition-colors"><i class="fa-solid fa-xmark"></i></button>
+    <a href="#about" class="nav-logo text-4xl font-black text-white hover:text-brand-cyan transition-colors mobile-link">About</a>
+    <a href="#skills" class="nav-logo text-4xl font-black text-white hover:text-brand-cyan transition-colors mobile-link">Stack</a>
+    <a href="#projects" class="nav-logo text-4xl font-black text-white hover:text-brand-cyan transition-colors mobile-link">Projects</a>
+  </div>
+
+  <section class="min-h-screen flex items-center px-4 sm:px-6 pt-24 pb-12">
+    <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 lg:gap-8 items-center reveal">
+        
+        <div class="order-2 lg:order-1 text-center lg:text-left flex flex-col items-center lg:items-start">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/5 border border-white/10 mb-6 sm:mb-8">
+                <span class="w-2 h-2 rounded-full bg-brand-cyan animate-pulse"></span>
+                <span class="text-xs sm:text-sm font-mono text-gray-300">Web Developer</span>
             </div>
+
+            <div class="min-h-[100px] sm:min-h-[140px] md:min-h-[160px] lg:min-h-[180px] flex flex-col justify-center lg:justify-start mb-4 sm:mb-6 w-full">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.2] lg:leading-[1.1] max-w-2xl mx-auto lg:mx-0">
+                    Engineering <br>
+                    <span id="typed-text" class="text-glow"></span><span class="typing-cursor">&nbsp;</span>
+                </h1>
+            </div>
+            
+            <p class="text-base sm:text-lg md:text-xl text-gray-400 max-w-lg mx-auto lg:mx-0 leading-relaxed mb-8 sm:mb-10">
+                I'm <strong class="text-white">Abdullah Sayed</strong>. A creative Developer bridging the gap between exceptional design and flawless Web execution.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full sm:w-auto">
+                 <a href="#projects" class="w-full sm:w-auto px-6 py-3 sm:px-8 sm:py-4 rounded-xl bg-brand-cyan text-brand-dark font-black hover:scale-105 transition-transform shadow-[0_0_20px_rgba(0,240,255,0.3)] text-center">
+                    Explore Projects <i class="fa-solid fa-arrow-right ml-2"></i>
+                 </a>
+                 <a href="https://github.com/hands-a" target="_blank" class="w-full sm:w-auto px-6 py-3 sm:px-8 sm:py-4 rounded-xl bg-white/5 text-white font-bold border border-white/10 hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-github text-xl"></i> GitHub
+                 </a>
+            </div>
+        </div>
+
+        <div class="order-1 lg:order-2 flex justify-center lg:justify-end relative mt-8 lg:mt-0">
+            <div class="relative w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[420px] lg:h-[420px]">
+                <div class="absolute inset-0 border border-brand-cyan/30 rounded-[2rem] translate-x-3 translate-y-3 sm:translate-x-4 sm:translate-y-4 transition-transform duration-500 hover:translate-x-2 hover:translate-y-2"></div>
+                
+                <div class="relative w-full h-full rounded-[2rem] overflow-hidden z-10 shadow-2xl group bg-brand-dark border border-white/10">
+                    <img src="image copy 5.png" alt="Abdullah Sayed" class="w-full h-full object-cover transition-all duration-700 hover:scale-105">
+                </div>
+                
+                <div class="absolute -bottom-4 -left-4 sm:-bottom-4 sm:-left-6 bg-brand-card/95 backdrop-blur-md border border-white/10 p-2 sm:p-3 md:p-4 rounded-2xl shadow-xl z-20 flex items-center gap-2 sm:gap-3">
+                    <i class="fa-brands fa-react text-2xl sm:text-3xl md:text-4xl text-brand-cyan animate-spin" style="animation-duration: 12s;"></i>
+                    <div>
+                        <p class="font-bold text-white leading-none text-xs sm:text-sm md:text-base">React</p>
+                        <p class="text-[8px] sm:text-[10px] md:text-xs text-gray-400">Specialist</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section id="about" class="py-16 sm:py-24 px-4 sm:px-6 relative border-t border-white/5">
+    <div class="max-w-7xl mx-auto reveal">
+      <div class="flex items-center gap-4 mb-8 sm:mb-12">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white">About <span class="text-brand-cyan">Me</span></h2>
+        <div class="h-px flex-1 bg-gradient-to-r from-brand-cyan/50 to-transparent"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div class="creative-card p-6 sm:p-8 lg:col-span-2">
+            <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">The Architect</h3>
+            <p class="text-gray-400 leading-relaxed text-base sm:text-lg mb-6">
+                Graduating from the <strong class="text-brand-cyan">DEPI Digital Initiative</strong> and aggressively trained at <strong class="text-brand-cyan">EraaSoft</strong>, my focus is not just on writing code, but on building architectures that scale. I merge modern aesthetics with complex state management.
+            </p>
+            <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+                <a href="harshibar_s_resume.pdf" download class="w-full sm:w-auto px-5 py-3 sm:px-6 bg-white/5 border border-white/10 rounded-lg text-white font-bold hover:bg-brand-cyan hover:text-brand-dark transition-colors flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-file-pdf"></i> Download CV
+                </a>
+                <a href="https://www.linkedin.com/in/abdullah-sayed-mahmoud-7950a431a/" target="_blank" class="w-full sm:w-auto px-5 py-3 sm:px-6 bg-[#0a66c2]/10 border border-[#0a66c2]/30 rounded-lg text-white font-bold hover:bg-[#0a66c2] transition-colors flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-linkedin"></i> Connect
+                </a>
+            </div>
+        </div>
+
+        <div class="creative-card p-6 sm:p-8 flex flex-col justify-center items-center text-center">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-brand-purple/20 text-brand-purple flex items-center justify-center text-2xl sm:text-3xl mb-4">
+                <i class="fa-solid fa-cubes"></i>
+            </div>
+            <h4 class="text-white font-bold text-lg sm:text-xl mb-2">3D & Immersive</h4>
+            <p class="text-gray-400 text-xs sm:text-sm">Currently expanding into WebGL & React Three Fiber to build next-gen interactive websites.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="py-16 sm:py-24 px-4 sm:px-6 border-t border-white/5 bg-white/[0.01]">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex items-center gap-4 mb-8 sm:mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white">The <span class="text-brand-purple">Tech</span></h2>
+        <div class="h-px flex-1 bg-gradient-to-r from-brand-purple/50 to-transparent"></div>
+      </div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div class="creative-card p-4 sm:p-6 flex flex-col items-center justify-center gap-3 sm:gap-4 group reveal">
+          <i class="fa-brands fa-react text-4xl sm:text-5xl text-[#61DAFB] group-hover:scale-110 transition-transform"></i>
+          <span class="font-bold text-white tracking-wide text-sm sm:text-base">React.js</span>
         </div>
         
-        <h1 class="text-4xl md:text-7xl font-bold text-white mb-6 tracking-tight">
-            Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">Abdullah Sayed</span>
-        </h1>
-        <p class="text-xl md:text-2xl text-slate-300 mb-8 font-light max-w-2xl mx-auto">
-            Frontend Engineer & <span class="text-teal-400 font-semibold">3D Web Developer</span>
-        </p>
-        <p class="text-slate-400 max-w-lg mx-auto leading-relaxed mb-10 text-sm md:text-base">
-            I craft accessible, pixel-perfect, and performant web experiences. 
-            Blurring the line between traditional web design and immersive 3D interactions.
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-             <a href="#projects" class="px-8 py-3.5 rounded-full bg-teal-500 hover:bg-teal-400 text-slate-900 font-bold transition transform hover:scale-105 shadow-lg shadow-teal-500/20">
-                View My Work
-             </a>
-             <a href="#about" class="px-8 py-3.5 rounded-full bg-transparent hover:bg-white/5 text-white border border-slate-600 hover:border-teal-400 font-semibold transition">
-                More About Me
-             </a>
+        <div class="creative-card p-4 sm:p-6 flex flex-col items-center justify-center gap-3 sm:gap-4 group reveal" style="transition-delay: 50ms;">
+            <i class="devicon-typescript-plain text-4xl sm:text-5xl text-[#3178C6] group-hover:scale-110 transition-transform"></i>
+            <span class="font-bold text-white tracking-wide text-sm sm:text-base">TypeScript</span>
         </div>
+        
+        <div class="creative-card p-4 sm:p-6 flex flex-col items-center justify-center gap-3 sm:gap-4 group reveal" style="transition-delay: 100ms;">
+            <i class="fa-brands fa-js text-4xl sm:text-5xl text-[#F7DF1E] group-hover:scale-110 transition-transform"></i>
+            <span class="font-bold text-white tracking-wide text-sm sm:text-base">JavaScript</span>
+        </div>
+
+        <div class="creative-card p-4 sm:p-6 flex flex-col items-center justify-center gap-3 sm:gap-4 group reveal" style="transition-delay: 150ms;">
+            <i class="fa-brands fa-css3-alt text-4xl sm:text-5xl text-[#1572B6] group-hover:scale-110 transition-transform"></i>
+            <span class="font-bold text-white tracking-wide text-sm sm:text-base">Tailwind</span>
+        </div>
+
+        <div class="creative-card p-4 sm:p-6 flex flex-col items-center justify-center gap-3 sm:gap-4 group border-brand-purple/30 bg-brand-purple/5 reveal" style="transition-delay: 200ms;">
+            <i class="fa-solid fa-cube text-4xl sm:text-5xl text-brand-purple group-hover:-translate-y-2 transition-transform"></i>
+            <span class="font-bold text-white tracking-wide text-center text-sm sm:text-base">Three Fiber</span>
+        </div>
+
+        <div class="creative-card p-4 sm:p-6 flex flex-col items-center justify-center gap-3 sm:gap-4 group reveal" style="transition-delay: 250ms;">
+            <i class="fa-solid fa-network-wired text-4xl sm:text-5xl text-[#00E676] group-hover:scale-110 transition-transform"></i>
+            <span class="font-bold text-white tracking-wide text-sm sm:text-base">APIs</span>
+        </div>
+
+        <div class="creative-card p-4 sm:p-6 flex flex-col items-center justify-center gap-3 sm:gap-4 group reveal" style="transition-delay: 300ms;">
+            <i class="fa-brands fa-git-alt text-4xl sm:text-5xl text-[#F05032] group-hover:scale-110 transition-transform"></i>
+            <span class="font-bold text-white tracking-wide text-sm sm:text-base">Git</span>
+        </div>
+
+        <div class="creative-card p-4 sm:p-6 flex flex-col items-center justify-center gap-3 sm:gap-4 group reveal" style="transition-delay: 350ms;">
+            <i class="fa-brands fa-html5 text-4xl sm:text-5xl text-[#E34F26] group-hover:scale-110 transition-transform"></i>
+            <span class="font-bold text-white tracking-wide text-sm sm:text-base">HTML5</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="about" class="py-24 px-6 relative">
-    <div class="max-w-6xl mx-auto reveal">
-        <div class="flex flex-col md:flex-row gap-16 items-start">
-            
-            <div class="md:w-1/2">
-                <div class="flex items-center gap-2 mb-4">
-                  <span class="h-px w-8 bg-teal-500"></span>
-                  <span class="text-sm font-bold text-teal-400 uppercase tracking-widest">About Me</span>
-                </div>
-                <h3 class="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">Driven by Quality,<br>Performance & Innovation.</h3>
-                <p class="text-slate-400 leading-relaxed mb-6 text-lg">
-                    I am a frontend developer with a strong foundation in the React ecosystem. My journey is defined by a constant drive to learn and apply new technologies to solve real-world problems.
-                </p>
-                <p class="text-slate-400 leading-relaxed mb-8 text-lg">
-                    Graduating from the <strong class="text-white">DEPI Digital Initiative</strong> and completing intensive training at <strong class="text-white">EraaSoft</strong> gave me the discipline to write clean, maintainable code. I'm now pushing boundaries with <strong class="text-teal-400">React Three Fiber</strong>.
-                </p>
-
-                <div class="flex flex-wrap gap-6 items-center">
-                  <a href="harshibar_s_resume.pdf" download class="group flex items-center gap-3 px-6 py-3 bg-slate-800 rounded-lg border border-white/10 hover:border-teal-500/50 transition">
-                      <div class="w-10 h-10 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-400 group-hover:scale-110 transition">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                      </div>
-                      <span class="text-white font-medium group-hover:text-teal-400 transition">Download CV</span>
-                  </a>
-
-                  <div class="flex gap-4">
-                      <a href="https://github.com/hands-a" target="_blank" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/5 hover:border-white transition"><i class="fa-brands fa-github text-xl"></i></a>
-                      <a href="https://www.linkedin.com/in/abdullah-sayed-mahmoud-7950a431a/" target="_blank" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-slate-400 hover:text-blue-400 hover:bg-blue-400/10 hover:border-blue-400 transition"><i class="fa-brands fa-linkedin text-xl"></i></a>
-                      <a href="mailto:abdullahsayed.devo@gmail.com" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-slate-400 hover:text-teal-400 hover:bg-teal-400/10 hover:border-teal-400 transition"><i class="fa-solid fa-envelope text-xl"></i></a>
-                  </div>
-                </div>
-            </div>
-
-            <div class="md:w-1/2 w-full grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div class="p-6 rounded-2xl glass-card flex flex-col items-start gap-4">
-                    <i class="fa-solid fa-certificate text-3xl text-teal-400"></i>
-                    <div>
-                        <h4 class="text-white font-bold text-lg">DEPI Certified</h4>
-                        <p class="text-sm text-slate-400 mt-1">Digital Egypt Pioneers Initiative Graduate</p>
-                    </div>
-                </div>
-
-                <div class="p-6 rounded-2xl glass-card flex flex-col items-start gap-4">
-                    <i class="fa-solid fa-code-branch text-3xl text-blue-400"></i>
-                    <div>
-                        <h4 class="text-white font-bold text-lg">EraaSoft Alumnus</h4>
-                        <p class="text-sm text-slate-400 mt-1">Advanced Technical Training Completed</p>
-                    </div>
-                </div>
-
-                <div class="p-6 rounded-2xl glass-card flex flex-col items-start gap-4 sm:col-span-2">
-                    <i class="fa-solid fa-cubes text-3xl text-purple-400"></i>
-                    <div>
-                        <h4 class="text-white font-bold text-lg">3D Web Specialist</h4>
-                        <p class="text-sm text-slate-400 mt-1">Creating immersive experiences with React Three Fiber & WebGL.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-  </section>
-
-  <section id="skills" class="py-24 px-6 bg-slate-900/30">
-    <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-16 reveal">
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Technologies</h2>
-            <p class="text-slate-400 text-lg">The modern stack I use to build scalable applications.</p>
+  <section id="projects" class="py-16 sm:py-24 px-4 sm:px-6 border-t border-white/5">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex items-center gap-4 mb-8 sm:mb-12 reveal">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white">Featured <span class="text-brand-cyan">Work</span></h2>
+            <div class="h-px flex-1 bg-gradient-to-r from-brand-cyan/50 to-transparent"></div>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 reveal">
-            <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 group">
-                <i class="fa-brands fa-react text-5xl text-teal-400 group-hover:scale-110 transition duration-300 drop-shadow-lg"></i>
-                <h3 class="text-white font-medium">React.js</h3>
-            </div>
-            
-            <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 group">
-                <i class="fa-brands fa-js text-5xl text-yellow-400 group-hover:scale-110 transition duration-300"></i>
-                <h3 class="text-white font-medium">JavaScript (ES6+)</h3>
-            </div>
-            
-            <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 group">
-                <i class="fa-brands fa-css3-alt text-5xl text-blue-500 group-hover:scale-110 transition duration-300"></i>
-                <h3 class="text-white font-medium">Tailwind CSS</h3>
-            </div>
-            
-            <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 group">
-                <i class="fa-solid fa-network-wired text-5xl text-green-400 group-hover:scale-110 transition duration-300"></i>
-                <h3 class="text-white font-medium">RESTful APIs</h3>
-            </div>
-            
-             <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 group border-teal-500/30">
-                <i class="fa-solid fa-cubes text-5xl text-purple-400 group-hover:rotate-12 transition duration-300"></i>
-                <h3 class="text-white font-bold">React Three Fiber</h3>
-            </div>
-            
-            <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 group">
-                <i class="devicon-typescript-plain text-5xl text-blue-400 group-hover:scale-110 transition duration-300"></i>
-                <h3 class="text-white font-medium">TypeScript</h3>
-            </div>
-            
-            <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 group">
-                <i class="fa-brands fa-git-alt text-5xl text-orange-500 group-hover:scale-110 transition duration-300"></i>
-                <h3 class="text-white font-medium">Git & GitHub</h3>
-            </div>
-            
-             <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 group">
-                <i class="fa-brands fa-html5 text-5xl text-orange-600 group-hover:scale-110 transition duration-300"></i>
-                <h3 class="text-white font-medium">HTML5</h3>
-            </div>
-        </div>
-    </div>
-  </section>
-
-  <section id="projects" class="py-24 px-6">
-    <div class="max-w-6xl mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal px-2">
-            <div>
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Selected Work</h2>
-                <p class="text-slate-400 text-lg">Projects that showcase my skills in frontend & backend integration.</p>
-            </div>
-            <a href="https://github.com/hands-a" target="_blank" class="hidden md:flex items-center gap-2 text-teal-400 hover:text-teal-300 transition mt-4 md:mt-0">
-                See all on GitHub <i class="fa-solid fa-arrow-right"></i>
-            </a>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-8 reveal">
-            
-            <div class="glass-card rounded-2xl overflow-hidden flex flex-col group relative">
-                <div class="h-52 bg-slate-800 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-transparent transition duration-500 z-10"></div>
-                    <img src="image copy.png" alt="Event Linker Project" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
-                    
-                    <div class="absolute top-4 right-4 z-20 bg-teal-500/90 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
-                        Featured
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+            <div class="creative-card overflow-hidden flex flex-col group reveal">
+                <div class="h-48 sm:h-56 md:h-64 relative overflow-hidden bg-brand-dark border-b border-white/5">
+                    <img src="image copy.png" alt="Event Linker" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                    <div class="absolute top-3 right-3 sm:top-4 sm:right-4 bg-brand-dark/90 backdrop-blur border border-brand-cyan text-brand-cyan text-[10px] sm:text-xs font-bold px-3 py-1 sm:px-4 sm:py-1.5 rounded-full">
+                        Production
                     </div>
                 </div>
-
-                <div class="p-8 flex-1 flex flex-col relative z-20">
-                    <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-teal-400 transition">Event Linker</h3>
-                    <p class="text-slate-400 text-sm mb-6 flex-1 leading-relaxed">
-                        A comprehensive web application that allows users to create, manage, and discover events seamlessly.
-                    </p>
-                    
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1 text-xs font-medium text-teal-300 bg-teal-500/10 border border-teal-500/20 rounded-full">React</span>
-                        <span class="px-3 py-1 text-xs font-medium text-blue-300 bg-blue-500/10 border border-blue-500/20 rounded-full">Tailwind</span>
-                        <span class="px-3 py-1 text-xs font-medium text-purple-300 bg-purple-500/10 border border-purple-500/20 rounded-full">API</span>
+                <div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1">
+                    <h3 class="text-2xl sm:text-3xl font-black text-white mb-2 sm:mb-3">Event Linker</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm mb-4 sm:mb-6 flex-1 leading-relaxed">A full-scale platform to orchestrate, manage, and discover events seamlessly with robust API integrations.</p>
+                    <div class="flex flex-wrap gap-2 mb-6 sm:mb-8">
+                        <span class="bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan px-2 py-1 sm:px-3 sm:py-1 rounded-md text-[10px] sm:text-xs font-mono">React</span>
+                        <span class="bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan px-2 py-1 sm:px-3 sm:py-1 rounded-md text-[10px] sm:text-xs font-mono">Tailwind</span>
+                        <span class="bg-white/5 border border-white/10 text-gray-300 px-2 py-1 sm:px-3 sm:py-1 rounded-md text-[10px] sm:text-xs font-mono">API</span>
                     </div>
-                    
-                    <a href="https://event-linker-r-s2l3.vercel.app/" target="_blank" class="w-full py-3 rounded-lg bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-500 hover:to-teal-400 text-white font-bold text-center shadow-lg shadow-teal-500/25 transition transform active:scale-95">
-                        <i class="fa-solid fa-rocket mr-2"></i> View Live Demo
+                    <a href="https://event-linker-r-s2l3.vercel.app/" target="_blank" class="w-full py-3 sm:py-3.5 rounded-xl bg-white/5 hover:bg-brand-cyan hover:text-brand-dark text-white font-bold text-center border border-white/10 transition-all text-sm sm:text-base">
+                        Launch Live <i class="fa-solid fa-rocket ml-2"></i>
                     </a>
                 </div>
             </div>
 
-            <div class="glass-card rounded-2xl overflow-hidden flex flex-col group">
-                <div class="h-52 bg-slate-800 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-transparent transition duration-500 z-10"></div>
-                    <img src="image.png" alt="Restaurantly Project" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+            <div class="creative-card overflow-hidden flex flex-col group reveal" style="transition-delay: 100ms;">
+                <div class="h-48 sm:h-56 md:h-64 relative overflow-hidden bg-brand-dark border-b border-white/5">
+                    <img src="image.png" alt="Restaurantly" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                 </div>
-
-                <div class="p-8 flex-1 flex flex-col">
-                    <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-teal-400 transition">Restaurantly</h3>
-                    <p class="text-slate-400 text-sm mb-6 flex-1 leading-relaxed">
-                        A modern, responsive restaurant website featuring an elegant UI and smooth navigation experiences.
-                    </p>
-                    
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1 text-xs font-medium text-blue-300 bg-blue-500/10 border border-blue-500/20 rounded-full">Tailwind</span>
-                        <span class="px-3 py-1 text-xs font-medium text-teal-300 bg-teal-500/10 border border-teal-500/20 rounded-full">React</span>
+                <div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1">
+                    <h3 class="text-2xl sm:text-3xl font-black text-white mb-2 sm:mb-3">Restaurantly</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm mb-4 sm:mb-6 flex-1 leading-relaxed">A striking modern restaurant landing page executing pixel-perfect UI and establishing strict design tokens.</p>
+                    <div class="flex flex-wrap gap-2 mb-6 sm:mb-8">
+                        <span class="bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan px-2 py-1 sm:px-3 sm:py-1 rounded-md text-[10px] sm:text-xs font-mono">React</span>
+                        <span class="bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan px-2 py-1 sm:px-3 sm:py-1 rounded-md text-[10px] sm:text-xs font-mono">Tailwind</span>
                     </div>
-                    
-                    <a href="https://restaurant-phi-one-22.vercel.app/" target="_blank" class="w-full py-3 rounded-lg bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-500 hover:to-teal-400 text-white font-bold text-center shadow-lg shadow-teal-500/25 transition transform active:scale-95">
-                        <i class="fa-solid fa-rocket mr-2"></i> View Live Demo
+                    <a href="https://restaurant-phi-one-22.vercel.app/" target="_blank" class="w-full py-3 sm:py-3.5 rounded-xl bg-white/5 hover:bg-brand-cyan hover:text-brand-dark text-white font-bold text-center border border-white/10 transition-all text-sm sm:text-base">
+                        Launch Live <i class="fa-solid fa-rocket ml-2"></i>
                     </a>
                 </div>
             </div>
 
-            <div class="glass-card rounded-2xl overflow-hidden flex flex-col group border-dashed border-slate-700">
-                <div class="h-52 bg-slate-800/50 flex items-center justify-center relative overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                    <i class="fa-solid fa-laptop-code text-6xl text-slate-600 group-hover:text-purple-400 transition duration-500 transform group-hover:scale-110"></i>
-                </div>
-
-                <div class="p-8 flex-1 flex flex-col">
-                    <h3 class="text-2xl font-bold text-white mb-2">E-Learning System</h3>
-                    <p class="text-slate-400 text-sm mb-6 flex-1 leading-relaxed">
-                        An upcoming educational platform integrating 3D elements for interactive learning.
-                    </p>
-                    
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1 text-xs font-medium text-teal-300 bg-teal-500/10 border border-teal-500/20 rounded-full">React</span>
-                        <span class="px-3 py-1 text-xs font-medium text-purple-300 bg-purple-500/10 border border-purple-500/20 rounded-full">React Three Fiber</span>
-                        <span class="px-3 py-1 text-xs font-medium text-pink-300 bg-pink-500/10 border border-pink-500/20 rounded-full">Tailwind</span>
-                    </div>
-                    
-                    <span class="w-full py-3 rounded-lg border border-dashed border-slate-600 text-slate-500 text-center text-sm cursor-not-allowed select-none">
-                        <i class="fa-solid fa-person-digging mr-2"></i> In Development
-                    </span>
-                </div>
-            </div>
-
-            <div class="glass-card rounded-2xl overflow-hidden flex flex-col group">
-              <div class="h-52 bg-slate-800 relative overflow-hidden">
-                  <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-transparent transition duration-500 z-10"></div>
-                  <img src="image copy 3.png" alt="E-Commerce Project" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+            <div class="creative-card overflow-hidden flex flex-col group reveal">
+              <div class="h-48 sm:h-56 md:h-64 relative overflow-hidden bg-brand-dark border-b border-white/5">
+                  <img src="image copy 3.png" alt="Vineta" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
               </div>
-
-              <div class="p-8 flex-1 flex flex-col">
-                  <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-teal-400 transition">Vineta E-Commerce</h3>
-                  <p class="text-slate-400 text-sm mb-6 flex-1 leading-relaxed">
-                      A fully functional furniture e-commerce platform with cart management, advanced filtering, and a seamless checkout experience.
-                  </p>
-                  
-                  <div class="flex flex-wrap gap-2 mb-6">
-                      <span class="px-3 py-1 text-xs font-medium text-teal-300 bg-teal-500/10 border border-teal-500/20 rounded-full">React</span>
-                      <span class="px-3 py-1 text-xs font-medium text-blue-300 bg-blue-500/10 border border-blue-500/20 rounded-full">Tailwind</span>
-                      <span class="px-3 py-1 text-xs font-medium text-orange-300 bg-orange-500/10 border border-orange-500/20 rounded-full">Context API</span>
+              <div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1">
+                  <h3 class="text-2xl sm:text-3xl font-black text-white mb-2 sm:mb-3">Vineta E-Commerce</h3>
+                  <p class="text-gray-400 text-xs sm:text-sm mb-4 sm:mb-6 flex-1 leading-relaxed">A dynamic furniture e-commerce interface featuring complex cart state management and advanced filtering via Context API.</p>
+                  <div class="flex flex-wrap gap-2 mb-6 sm:mb-8">
+                      <span class="bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan px-2 py-1 sm:px-3 sm:py-1 rounded-md text-[10px] sm:text-xs font-mono">React</span>
+                      <span class="bg-brand-purple/20 border border-brand-purple/30 text-brand-purple px-2 py-1 sm:px-3 sm:py-1 rounded-md text-[10px] sm:text-xs font-mono">Context API</span>
                   </div>
-                  
-                  <a href="https://vanita.vercel.app/" target="_blank" class="w-full py-3 rounded-lg bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-500 hover:to-teal-400 text-white font-bold text-center shadow-lg shadow-teal-500/25 transition transform active:scale-95">
-                      <i class="fa-solid fa-rocket mr-2"></i> View Live Demo
+                  <a href="https://vanita.vercel.app/" target="_blank" class="w-full py-3 sm:py-3.5 rounded-xl bg-white/5 hover:bg-brand-cyan hover:text-brand-dark text-white font-bold text-center border border-white/10 transition-all text-sm sm:text-base">
+                      Launch Live <i class="fa-solid fa-rocket ml-2"></i>
                   </a>
               </div>
-          </div>
+            </div>
 
-        </div>
-        
-        <div class="mt-8 text-center md:hidden">
-             <a href="https://github.com/hands-a" target="_blank" class="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300 transition">
-                See all on GitHub <i class="fa-solid fa-arrow-right"></i>
-            </a>
+            <div class="creative-card overflow-hidden flex flex-col group border-dashed border-2 border-slate-700 bg-striped reveal" style="transition-delay: 100ms;">
+              <div class="h-48 sm:h-56 md:h-64 bg-brand-dark/40 backdrop-blur-sm flex flex-col items-center justify-center relative overflow-hidden border-b border-white/5">
+                  <i class="fa-solid fa-laptop-code text-5xl sm:text-7xl text-gray-600 group-hover:text-brand-cyan transition duration-500 transform group-hover:scale-110 mb-3 sm:mb-4"></i>
+                  <div class="bg-brand-cyan/20 text-brand-cyan text-[10px] sm:text-xs font-mono px-3 py-1 sm:px-4 sm:py-1.5 rounded border border-brand-cyan/30 animate-pulse">
+                      <i class="fa-solid fa-screwdriver-wrench mr-1"></i> Under Development
+                  </div>
+              </div>
+              <div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1 bg-brand-card/90">
+                  <h3 class="text-2xl sm:text-3xl font-black text-white mb-2 sm:mb-3">E-Learning System</h3>
+                  <p class="text-gray-400 text-xs sm:text-sm mb-4 sm:mb-6 flex-1 leading-relaxed">An ambitious educational platform aiming to integrate 3D interactive elements to revolutionize the learning experience.</p>
+                  <div class="flex flex-wrap gap-2 mb-6 sm:mb-8 opacity-70">
+                      <span class="bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan px-2 py-1 sm:px-3 sm:py-1 rounded-md text-[10px] sm:text-xs font-mono">React</span>
+                      <span class="bg-brand-purple/20 border border-brand-purple/30 text-brand-purple px-2 py-1 sm:px-3 sm:py-1 rounded-md text-[10px] sm:text-xs font-mono">Three.js</span>
+                  </div>
+                  <button disabled class="w-full py-3 sm:py-3.5 rounded-xl bg-transparent border-2 border-slate-700 text-slate-500 font-bold text-center cursor-not-allowed text-sm sm:text-base">
+                      Coming Soon...
+                  </button>
+              </div>
+            </div>
+
         </div>
     </div>
   </section>
 
-  <footer class="py-8 text-center border-t border-white/5 bg-slate-900 relative z-10">
-    <p class="text-slate-500 text-sm">
-        &copy; 2026 Abdullah Sayed. 
-    </p>
+  <footer class="pt-12 sm:pt-16 pb-6 sm:pb-8 border-t border-white/5 bg-brand-dark relative z-10 overflow-hidden">
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full sm:w-3/4 h-32 bg-brand-cyan/5 blur-[80px] sm:blur-[100px] pointer-events-none"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="flex flex-col md:flex-row items-center md:items-start justify-between gap-8 sm:gap-10 mb-8 sm:mb-12">
+            
+            <div class="flex flex-col items-center md:items-start gap-3 sm:gap-4">
+                <a href="#" class="nav-logo font-black text-3xl sm:text-4xl text-white flex items-center gap-2 sm:gap-3 group">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-xl border border-white/10 bg-white/5 group-hover:border-brand-cyan transition-colors">
+                      <span class="font-bold text-lg sm:text-xl text-white">A<span class="text-brand-cyan">S</span></span>
+                    </div>
+                    <span class="text-brand-cyan"></span>
+                </a>
+                <p class="text-gray-400 text-xs sm:text-sm max-w-[280px] sm:max-w-xs text-center md:text-left leading-relaxed">
+                    Crafting immersive, pixel-perfect web experiences with modern frontend technologies.
+                </p>
+            </div>
+
+            <div class="flex flex-col items-center md:items-end gap-3 sm:gap-4">
+                <h4 class="text-white font-bold tracking-wide uppercase text-xs sm:text-sm">Connect</h4>
+                <div class="flex items-center gap-3 sm:gap-4">
+                    <a href="https://github.com/hands-a" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-white hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 shadow-lg">
+                        <i class="fa-brands fa-github text-lg sm:text-xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/abdullah-sayed-mahmoud-7950a431a/" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#0a66c2] hover:border-[#0a66c2] hover:bg-[#0a66c2]/10 transition-all duration-300 hover:-translate-y-1 shadow-lg">
+                        <i class="fa-brands fa-linkedin text-lg sm:text-xl"></i>
+                    </a>
+                    <a href="mailto:abdullahsayed.devo@gmail.com" class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-brand-cyan hover:border-brand-cyan hover:bg-brand-cyan/10 transition-all duration-300 hover:-translate-y-1 shadow-lg">
+                        <i class="fa-solid fa-envelope text-lg sm:text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-6 sm:pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-gray-500 text-xs sm:text-sm font-mono text-center sm:text-left order-2 sm:order-1">
+                &copy; 2026 Abdullah Sayed. All rights reserved.
+            </p>
+            
+            <a href="#" class="nav-logo font-black text-lg sm:text-xl text-white flex items-center gap-2 transition-colors hover:text-brand-cyan order-1 sm:order-2">
+                A<span class="text-brand-cyan">S</span>
+                <span class="text-gray-600">|</span>
+            </a>
+            
+        </div>
+    </div>
   </footer>
 
-  <script>
-    // Scroll Reveal Script
-    window.addEventListener('scroll', reveal);
-
-    function reveal() {
-      var reveals = document.querySelectorAll('.reveal');
-      
-      for (var i = 0; i < reveals.length; i++) {
-        var windowheight = window.innerHeight;
-        var revealtop = reveals[i].getBoundingClientRect().top;
-        var revealpoint = 100; 
-
-        if (revealtop < windowheight - revealpoint) {
-          reveals[i].classList.add('active');
-        }
-      }
-    }
-    reveal(); // Trigger on load
-
-    // Mobile Menu Toggle
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  </script>
-
+  <script src="script.js"></script>
+    
+    
 </body>
 </html>
